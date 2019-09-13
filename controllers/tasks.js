@@ -27,6 +27,7 @@ module.exports = {
     },
 
     addTask: function(req, res){
+        console.log(req.body)
         Task.create({title: req.body.title, description: req.body.description, completed: req.body.completed}, function(err, task){
             if(err){
                 res.json({message: "Error!", error: err});
@@ -50,7 +51,7 @@ module.exports = {
                 if(req.body.description){
                     task.description = req.body.description;
                 }
-                if(req.params.completed){
+                if(req.body.completed){
                     task.completed = req.body.completed;
             }
             task.save(function(err){

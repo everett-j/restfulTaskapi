@@ -6,7 +6,7 @@ module.exports = function(app){
 
     app.get("/tasks/:id", tasks.details)
 
-    app.post("/tasks", tasks.addTask)
+    app.post("/tasks",  tasks.addTask) 
 
     app.put("/tasks/:id", tasks.editTask)
 
